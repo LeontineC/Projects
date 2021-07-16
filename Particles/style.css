@@ -1,0 +1,167 @@
+* {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+:root {
+    --color-one: #20C494;
+    --color-two: rgb(214, 97, 179);
+    --color-three: rgb(98, 194, 211);
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1597839219216-a773cb2473e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    }
+
+.container {
+    height: 100%;
+    animation: color 5s linear infinite;
+    }
+
+@keyframes color {
+    100% { filter:  hue-rotate(360deg);}
+} 
+
+.container span {
+        position: absolute;
+        }
+
+.container span:nth-child(1) {
+    top: 5em;
+    left: -6em;
+    bottom: 20em;
+    right: 10em;
+    animation: one 8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+.container span:nth-child(4) {
+        top: -6em;
+        left: 22em;
+        bottom: 6em;
+        right: 6em;
+        animation: one 8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+.container span:nth-child(7) {
+    top: -12em;
+    left: -40em;
+    bottom: 2em;
+    right: 10em;
+    animation: one 8s infinite cubic-bezier(0.215, 0.61, 0.355, 1) ;
+    }
+
+@keyframes one {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.container span:nth-child(2) {
+    top: -15em;
+    left: -24em;
+    bottom: -1em;
+    right: 1em;
+    animation: two 7s infinite reverse cubic-bezier(.43,.87,.86,.33);
+    }
+
+.container span:nth-child(5) {
+        top: -20em;
+        left: 6em;
+        bottom: 17em;
+        right: 10em;
+        animation: two 7s infinite reverse cubic-bezier(.43,.87,.86,.33);
+        }
+
+.container span:nth-child(8) {
+            top: -12em;
+            left: 40em;
+            bottom: -1em;
+            right: -10em;
+            animation: two 7s infinite reverse cubic-bezier(.43,.87,.86,.33);
+            }
+
+@keyframes two {
+        0% {transform: rotate(360deg);}
+       
+        100% {transform: rotate(0deg);}
+    } 
+
+
+
+.container span:nth-child(3) {
+    top: -25em;
+    left: -20em;
+    bottom: 8em;
+    right: -8em;
+    animation: three 9s infinite reverse cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    } 
+
+.container span:nth-child(6) {
+        top: -15em;
+        left: 30em;
+        bottom: 5em;
+        right: 10em;
+        animation: three 9s infinite reverse cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+
+.container span:nth-child(9) {
+            top: -11em;
+            left: -3em;
+            bottom: 14em;
+            right: -10em;
+            animation: three 9s infinite reverse cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            }
+
+@keyframes three {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+    
+}
+
+.container span:before {
+    content: '';
+    position: absolute;
+    width: .2em;
+    height: .2em;
+    background: white;
+    border-radius: 50%;
+    top: 50vh;
+    left: 50vw;
+} 
+
+.container  span:nth-child(1):before,
+            span:nth-child(4):before,
+            span:nth-child(7):before
+            {
+    background: var(--color-one);
+    box-shadow: 0 0 5px var(--color-one),
+                0 0 10px var(--color-one),
+                0 0 15px var(--color-one),
+                0 0 90px var(--color-one);
+}
+
+.container  span:nth-child(2):before,
+            span:nth-child(5):before,
+            span:nth-child(8):before  
+            {
+    background: var(--color-two);
+    box-shadow: 0 0 5px var(--color-two),
+                0 0 10px var(--color-two),
+                0 0 15px var(--color-two),
+                0 0 90px var(--color-two);
+}
+
+.container  span:nth-child(3):before,
+            span:nth-child(6):before,
+            span:nth-child(9):before
+            {
+    background: var(--color-three);
+    box-shadow: 0 0 5px var(--color-three),
+                0 0 10px var(--color-three),
+                0 0 15px var(--color-three),
+                0 0 90px var(--color-three);
+}
+
