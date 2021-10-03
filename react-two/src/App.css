@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Mali', cursive;
+  overflow-x: hidden;
+}
+
+.container {
+  background: rgb(240,241,187);
+  background: linear-gradient(90deg, rgba(240,241,187,1) 0%, rgba(245,188,237,1) 35%, rgba(152,227,189,1) 67%, rgba(152,221,235,1) 100%);
+  width: 100vw;
+  height: 100%;
+}
+
+.exampleParagraph {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.fontButtons {
+  display: flex;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+.fontButton  {
+  border-radius: 50%;
+  border: rgb(232, 199, 253) solid 4px;
+  margin: 1vw;
+  height: 60px;
+  width: 60px;
+  background-color: rgb(232, 199, 253);
+  box-shadow: 5px -5px  rgb(216, 154, 255, 0.5);
+}
+
+p {
+  margin: 0 20vw;
+  
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: rgb(236, 110, 179);
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: rgb(236, 110, 179);
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
