@@ -37,7 +37,6 @@
 
 p {
   margin: 0 20vw;
-  
 }
 
 .slider {
@@ -50,18 +49,18 @@ p {
 }
 
 .images {
-  width: 1000px;
-  height: 600px;
+  width: 60vw;
+  height: 70vh;
   border-radius: 10px;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 20vw;
+  margin-right: 20vw;
 }
 
 .right-arrow {
   position: absolute;
   top: 50%;
   right: 32px;
-  font-size: 3rem;
+  font-size: 6vw;
   color: rgb(236, 110, 179);
   z-index: 10;
   cursor: pointer;
@@ -72,7 +71,7 @@ p {
   position: absolute;
   top: 50%;
   left: 32px;
-  font-size: 3rem;
+  font-size: 6vw;
   color: rgb(236, 110, 179);
   z-index: 10;
   cursor: pointer;
@@ -87,5 +86,48 @@ p {
 .slide.active {
   opacity: 1;
   transition-duration: 1s;
-  transform: scale(1.08);
+  transform: scale(1.05);
+  /* transform: skewX(5deg); */
+}
+
+@media screen and (max-width: 850px) {
+  .images {
+    width: 100vw;
+    height: 80vh;
+    margin: 0;
+    padding-right: 5%;
+    padding: 5%;
+  }
+  p {
+    margin: 1vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .images {
+    height: 60vh;
+  }
+  p{
+    margin-bottom: 10vw;
+  }
+ 
+  .slider {
+    height: 60vh;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .images {
+    height: 50vh;
+    margin-right: 5vw;
+  }
+  p {
+    margin: 20vw;
+    margin-bottom: 0;
+  }
+  .fontButtons {
+    margin-top: 20vw;
+  }
+ 
 }
