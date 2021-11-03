@@ -1,0 +1,191 @@
+body {
+  display: grid;
+  min-height: 100vh;
+  background-color: #000;
+  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwYWNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  color: #6066c2;
+  place-items: center;
+  font-family: "Henny Penny", cursive;
+  perspective: 400px;
+  perspective-origin: 50% calc(50% - 110px);
+}
+
+.containerAll {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.panelContainer {
+  display: flex;
+  transform-style: preserve-3d;
+  animation: around 20s linear infinite;
+}
+
+@keyframes around {
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+.panel {
+  width: 50px;
+  height: 140px;
+  position: absolute;
+  overflow: hidden;
+  transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(189px);
+}
+
+.panel::before {
+  position: absolute;
+  content: "what goes around comes around";
+  width: max-content;
+  font-size: 88px;
+  left: var(--left);
+  text-shadow: 0px 1px 0px #000, 0px 2px 0px #000, 0px 3px 0px #000;
+}
+
+.panel:nth-child(1) {
+  --left: 0px;
+  --angle: 0deg;
+}
+
+.panel:nth-child(2) {
+  --left: -50px;
+  --angle: 14.4deg;
+}
+
+.panel:nth-child(3) {
+  --left: -100px;
+  --angle: 28.8deg;
+}
+
+.panel:nth-child(4) {
+  --left: -150px;
+  --angle: 43.2deg;
+}
+
+.panel:nth-child(5) {
+  --left: -200px;
+  --angle: 57.6deg;
+}
+
+.panel:nth-child(6) {
+  --left: -250px;
+  --angle: 72deg;
+}
+
+.panel:nth-child(7) {
+  --left: -300px;
+  --angle: 86.4deg;
+}
+
+.panel:nth-child(8) {
+  --left: -350px;
+  --angle: 100.8deg;
+}
+
+.panel:nth-child(9) {
+  --left: -400px;
+  --angle: 115.2deg;
+}
+
+.panel:nth-child(10) {
+  --left: -450px;
+  --angle: 129.6deg;
+}
+
+.panel:nth-child(11) {
+  --left: -500px;
+  --angle: 144deg;
+}
+
+.panel:nth-child(12) {
+  --left: -550px;
+  --angle: 158.4deg;
+}
+
+.panel:nth-child(13) {
+  --left: -600px;
+  --angle: 172.8deg;
+}
+
+.panel:nth-child(14) {
+  --left: -650px;
+  --angle: 187.2deg;
+}
+
+.panel:nth-child(15) {
+  --left: -700px;
+  --angle: 201.6deg;
+}
+
+.panel:nth-child(16) {
+  --left: -750px;
+  --angle: 216deg;
+}
+
+.panel:nth-child(17) {
+  --left: -800px;
+  --angle: 230.4deg;
+}
+
+.panel:nth-child(18) {
+  --left: -850px;
+  --angle: 244.8deg;
+}
+
+.panel:nth-child(19) {
+  --left: -900px;
+  --angle: 259.2deg;
+}
+
+.panel:nth-child(20) {
+  --left: -950px;
+  --angle: 273.6deg;
+}
+
+.panel:nth-child(21) {
+  --left: -1000px;
+  --angle: 288deg;
+}
+
+.panel:nth-child(22) {
+  --left: -1050px;
+  --angle: 302.4deg;
+}
+
+.panel:nth-child(23) {
+  --left: -1100px;
+  --angle: 316.8deg;
+}
+
+.panel:nth-child(24) {
+  --left: -1150px;
+  --angle: 331.2deg;
+}
+
+.panel:nth-child(25) {
+  --left: -1200px;
+  --angle: 345.6deg;
+}
+
+img {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  top: -250px;
+  left: -400px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: center 25s linear infinite;
+}
+
+@keyframes center {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
