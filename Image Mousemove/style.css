@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     padding: 0;
@@ -36,4 +37,44 @@ body {
     top: 2rem;;
     left: 50rem;
     transition: .5s linear;
+=======
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    background: rgb(253, 244, 229);
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.text {
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
+}
+
+.image {
+    background-image: url("fox-floor.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 60%;
+}
+
+#fox {
+    position: absolute;
+    top: 2rem;;
+    left: 50rem;
+    transition: .5s linear;
+>>>>>>> b9689e5ee933ddada507f338133088024b7d2bda
 }
