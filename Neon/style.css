@@ -2,9 +2,11 @@ body       {
             background-color: black;
             font-family: Shadows Into Light, sans-serif ;
             text-align: center;
+            height: 100vh;
             }
 
 h1 {
+        
         margin: 1em;
         color: white;
         font-size: 10vw;
@@ -19,7 +21,8 @@ h1 {
     }
 
 
-.fantastic {    
+.fantastic {  
+      
             margin-top: 1em;
             animation: fantastic 1s infinite alternate-reverse;
             }

@@ -31,15 +31,15 @@ body {
 
 @-webkit-keyframes around {
   to {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
   }
 }
 
 @keyframes around {
   to {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    -webkit-transform: rotateY(-360deg);
+            transform: rotateY(-360deg);
   }
 }
 
@@ -200,8 +200,8 @@ body {
           transform: translate(-50%, -50%);
   -webkit-box-shadow: inset 16px 0 40px 3px rgba(0, 0, 0, 0.9), inset -3px 0 5px 2px rgba(255, 255, 255, 0.16);
           box-shadow: inset 16px 0 40px 3px rgba(0, 0, 0, 0.9), inset -3px 0 5px 2px rgba(255, 255, 255, 0.16);
-  -webkit-animation: earth 25s linear infinite;
-          animation: earth 25s linear infinite;
+  -webkit-animation: earth 15s linear infinite;
+          animation: earth 15s linear infinite;
 }
 
 @-webkit-keyframes earth {

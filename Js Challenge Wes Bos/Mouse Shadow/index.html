@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Shadow</title>
+  </head>
+  <body>
+    <div class="hero">
+      <h1 contenteditable>Holy Moly</h1>
+    </div>
+
+    <style>
+      html {
+        color: black;
+        font-family: sans-serif;
+        color: rgb(133, 178, 189);
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+      }
+
+      h1 {
+        text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+        font-size: 100px;
+      }
+    </style>
+
+    <script>
+      const hero = document.querySelector(".hero");
+      const text = hero.querySelector("h1");
+      const walk = 200; //px the shadow
+
+      function shadow(e) {
+        //    const width = hero.offSetWidth;
+        //    const height = hero.offsetHeight;    or
+
+        const { offsetWidth: width, offsetHeight: height } = hero;
+        let { offsetX: x, offsetY: y } = e;
+
+        if (this !== e.target) {
+          x = x + e.target.offsetLeft; // if mousemove over child of div gives its x y coordinates in relation to parent
+          y = y + e.target.offsetTop; // this refers to hero  e.target is parent or child
+        }
+
+        const xWalk = Math.round((x / width) * walk - walk / 2); //limits to half value const walk
+        const yWalk = Math.round((y / width) * walk - walk / 2);
+
+        text.style.textShadow = `
+          ${xWalk}px ${yWalk}px 5px rgb(136, 136, 136),
+          ${xWalk * -1}px ${yWalk}px 5px rgb(133, 189, 152),
+          ${yWalk}px ${xWalk * -1}px 5px rgb(133, 189, 182),
+          ${yWalk * -1}px ${xWalk}px 5px rgb(133, 178, 189)`;
+      }
+
+      hero.addEventListener("mousemove", shadow);
+    </script>
+  </body>
+</html>
