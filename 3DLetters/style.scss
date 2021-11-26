@@ -23,7 +23,7 @@ body {
 
 @keyframes around {
   to {
-    transform: rotateY(-360deg);
+    transform: rotateY(360deg);
   }
 }
 
