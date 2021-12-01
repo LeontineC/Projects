@@ -33,6 +33,7 @@
       h1 {
         text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
         font-size: 100px;
+        pointer-events: none;
       }
     </style>
 
@@ -48,10 +49,12 @@
         const { offsetWidth: width, offsetHeight: height } = hero;
         let { offsetX: x, offsetY: y } = e;
 
-        if (this !== e.target) {
-          x = x + e.target.offsetLeft; // if mousemove over child of div gives its x y coordinates in relation to parent
-          y = y + e.target.offsetTop; // this refers to hero  e.target is parent or child
-        }
+
+        console.log(x, y);
+        // if (this !== e.target) {
+          // x = x + e.target.offsetLeft; // if mousemove over child of div gives its x y coordinates in relation to parent
+          // y = y + e.target.offsetTop; // this refers to hero  e.target is parent or child
+        // }
 
         const xWalk = Math.round((x / width) * walk - walk / 2); //limits to half value const walk
         const yWalk = Math.round((y / width) * walk - walk / 2);

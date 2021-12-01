@@ -1,0 +1,125 @@
+html {
+  box-sizing: border-box;
+  background: #eeeeee;
+  font-family: "helvetica neue";
+  font-size: 20px;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header {
+  text-align: center;
+  height: 50vh;
+  background-image: url("https://images.unsplash.com/photo-1615738238969-c8242466dca2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fG1pc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-size: 7vw;
+  text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  background: black;
+  width: 100%;
+  position: relative;
+  top: 0;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+body.fixed-nav nav{
+  position: fixed;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.01);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li.logo {
+  max-width: 0;
+  overflow: hidden;
+  background-color: white;
+  font-size: 30px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.fixed-nav li.logo {
+  max-width: 500px;
+}
+
+li.logo a {
+  color: black;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+  color: white;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.site-wrap {
+  max-width: 700px;
+  margin: 70px auto;
+  background: white;
+  padding: 40px;
+  text-align: justify; /*stretches line so that each line equal width*/
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+  transform: scale(0.98);
+  transition: transform 0.5s;
+}
+
+body.fixed-nav .site-wrap {
+  transform: scale(1);
+}
+
+.image-scroll.align-left {
+ 
+  opacity: 0;
+  transition:  opacity .5s ease-in;
+}
+
+.image-scroll.align-right {
+ 
+  opacity: 0;
+  transition:  opacity .5s ease-in;
+}
+.image-scroll.slide-in{
+  
+  opacity: 1;
+}
+
+
+
+

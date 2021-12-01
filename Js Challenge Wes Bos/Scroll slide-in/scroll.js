@@ -12,7 +12,7 @@ function debounce(func, wait = 20, immediate = true) {
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
   };
-} ////??????
+} ////so as to limit the event
 
 const scrollImages = document.querySelectorAll(".imageScroll");
 
