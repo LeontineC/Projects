@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection Observer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">We are a blue planet and an ocean world</h1>
+      <p class="header-author">Nainoa Thompson</p>
+    </header>
+    <nav>
+      <ul>
+        <li class="logo"><a href="#">~BLUE~</a></li>
+        <li><a href="#">Navy</a></li>
+        <li><a href="#">Baby</a></li>
+        <li><a href="#">Midnight</a></li>
+        <li><a href="#">Indigo</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <div class="sections">
+        <p>
+          In painting and traditional colour theory, blue is one of the three
+          primary colours of pigments (red, yellow, blue), which can be mixed to
+          form a wide gamut of colours. Red and blue mixed together form violet,
+          blue and yellow together form green. Mixing all three primary colours
+          together produces a dark grey. From the Renaissance onwards, painters
+          used this system to create their colours. (See RYB colour system.)
+        </p>
+        <img
+          src="https://images.unsplash.com/photo-1508311603478-ce574376c3cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+          alt=""
+          class="sections-image position-right"
+        />
+      </div>
+      <div class="sections">
+        <img
+          src="https://images.unsplash.com/photo-1610252175870-eff76071590b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+          class="sections-image position-left"
+        />
+        <p>
+          The RYB model was used for colour printing by Jacob Christoph Le Blon
+          as early as 1725. Later, printers discovered that more accurate
+          colours could be created by using combinations of magenta, cyan,
+          yellow and black ink, put onto separate inked plates and then overlaid
+          one at a time onto paper. This method could produce almost all the
+          colours in the spectrum with reasonable accuracy.
+        </p>
+      </div>
+      <div class="sections">
+        <p>
+          Additive colour mixing. The projection of primary colour lights on a
+          screen shows secondary colours where two overlap; the combination red,
+          green, and blue each in full intensity makes white.
+        </p>
+        <img
+          src="https://images.unsplash.com/photo-1529346378633-c2b2a059c367?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+          class="sections-image position-right"
+        />
+      </div>
+      <div class="sections">
+        <img
+          src="https://images.unsplash.com/photo-1589763472885-46dd5b282f52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
+          alt=""
+          class="sections-image position-left"
+        />
+        <p>
+          On the HSV colour wheel, the complement of blue is yellow; that is, a
+          colour corresponding to an equal mixture of red and green light. On a
+          colour wheel based on traditional colour theory (RYB) where blue was
+          considered a primary colour, its complementary colour is considered to
+          be orange (based on the Munsell colour wheel).
+        </p>
+      </div>
+      <div class="sections">
+        <p>
+          Natural dyes to colour cloth and tapestries were made from plants.
+          Woad and true indigo were used to produce indigo dye used to colour
+          fabrics blue or indigo. Since the 18th century, natural blue dyes have
+          largely been replaced by synthetic dyes.
+        </p>
+        <img
+          src="https://images.unsplash.com/photo-1561765781-f7de2b8c56a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80"
+          alt=""
+          class="sections-image position-right"
+        />
+      </div>
+    </section>
+
+    <script>
+
+      ////nav////
+
+      const nav = document.querySelector("nav");
+      const header = document.querySelector("header");
+
+      const navOptions = {
+        root: null,
+        threshold: 0,
+        rootMargin: "-150px",
+      };
+
+     const navObserver = new IntersectionObserver(function (
+        entries,
+        navObserver
+      ) {
+        entries.forEach((entry) => {
+          console.log(entry);
+          if (!entry.isIntersecting) {
+            nav.classList.add("fixed");
+            document.body.style.backgroundColor = "#c4e4f5";
+          } else {
+            nav.classList.remove("fixed");
+            document.body.style.backgroundColor = "white";
+          }
+        });
+      },
+      navOptions);
+
+      navObserver.observe(header);
+
+      ////images////
+
+      const images = document.querySelectorAll(".sections-image");
+
+      const imageOptions = {
+        root: null,
+        threshold: 0,
+        rootMargin: "0px"
+      };
+
+      const imageObserver = new IntersectionObserver(function (
+        entries,
+        imageObserver
+      ) { 
+        entries.forEach(entry => {
+          console.log(entry.target);
+          if(entry.isIntersecting) {
+            entry.target.classList.add("active");
+        } else {
+            entry.target.classList.remove("active");
+        }
+        });
+      },
+      imageOptions);
+
+     images.forEach(image => {
+       imageObserver.observe(image);
+     });
+ 
+
+      
+    </script>
+  </body>
+</html>

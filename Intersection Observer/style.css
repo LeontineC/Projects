@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-extra: "Open Sans Condensed", sans-serif;
+
+  --clr-midnight: midnightblue;
+  --clr-baby: #89cff0;
+  --clr-navy: #0080;
+  --clr-indigo: #3f0fb7;
+  --clr-base: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  font-family: var(--ff-extra);
+  text-shadow: -3px -1px 0px rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  color: var(--clr-base);
+  background: url("https://images.unsplash.com/photo-1632395627760-72e6eca7f9c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+nav {
+  width: 100%;
+  font-family: var(--ff-extra);
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  color: var(--clr-midnight);
+  background: var(--clr-base);
+  transition: .5s ease-out;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  color:  var(--clr-base);
+  background: var(--clr-midnight);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh;
+  list-style: none;
+}
+
+nav .logo {
+   font-size: 4rem;
+   font-weight: 600;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  padding: 4px;
+}
+
+nav a:hover {
+    /* text-decoration: underline overline var(--clr-indigo); */
+    border: var(--clr-indigo) 3px solid;
+    padding: 1px;
+}
+
+section {
+  margin: 20rem auto 5rem auto;
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5rem;
+}
+
+.sections p {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 30vw;
+  min-height: 42vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+.sections img {
+    width: 30vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: all 1s ease-in-out ;
+}
+
+.position-right {
+   transform: translateX(80%);
+   opacity: 0;
+}
+
+.position-left {
+  transform: translateX(-80%);
+  opacity: 0;
+}
+
+.active {
+  transform: translateX(0%);
+  opacity: 1;
+}
