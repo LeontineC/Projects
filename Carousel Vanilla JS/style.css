@@ -17,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
   font-family: "Fuzzy Bubbles", cursive;
   background: url("bg2.jpg");
   overflow: hidden;
@@ -125,4 +124,10 @@ body {
 
 .disappear {
   display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper-carousel {
+   width: 80%;
+  }
 }

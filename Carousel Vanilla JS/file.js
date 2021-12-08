@@ -8,6 +8,7 @@ const indicatorBtn = document.querySelectorAll("indicator-btn");
 const slideWidth = slides[0].getBoundingClientRect().width;
 console.log(slideWidth);
 console.log(slides.length-1);
+console.log(slides[0].getBoundingClientRect())
 
 
 //arrange slides next to each other
