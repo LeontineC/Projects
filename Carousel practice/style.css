@@ -14,6 +14,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    overflow: hidden;
 }
 
 ul {
@@ -51,19 +52,18 @@ button {
     width: 100%;
     height: 38rem;
     margin: 0 auto;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: absolute;
     border-radius: 2%;
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+    display: none;
+
 }
 
 .active-item {
-    opacity: 1;
+    display: flex;
 }
 
 .carousel-item:nth-of-type(1) {
@@ -120,6 +120,7 @@ button {
 
 .indicator-btn {
     padding: 0.5rem;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .active-btn {
@@ -147,17 +148,35 @@ button {
 }
 
 .arrow-left {
-    top: 50%;
-    transform: translateY(-50%) rotate(-135deg);
+    top: 40%;
+    transform: rotate(-135deg) ;
     left: 2rem;
 }
 
 .arrow-right {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
+    top: 40%;
+    transform: rotate(45deg) ;
     right: 2rem;
 }
 
 .not-displayed {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 2rem;
+    }
+    .page-wrapper {
+        width: 100%;
+    }
+    .carousel-wrapper {
+        width: 80%;
+    }
+    .arrow-left {
+        left: 1.5rem;
+    }
+    .arrow-right {
+        right: 1.5rem;
+    }
 }
