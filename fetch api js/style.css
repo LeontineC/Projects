@@ -1,0 +1,25 @@
+body {
+    /* background: pink; */
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    margin: 4em auto;
+    width: 80vw;
+    /* background: orchid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+img {
+    width: 50vw;
+    height: 50vw;
+}
