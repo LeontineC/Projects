@@ -1,25 +1,62 @@
 body {
-    /* background: pink; */
-    width: 100vw;
-    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2011/12/15/11/15/messier-82-11177__340.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 .wrapper {
-    margin: 4em auto;
-    width: 80vw;
-    /* background: orchid; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
+    width: 12.5rem;
+    height: 12.5rem;
+    margin: 15rem auto;
+    perspective: 37.5rem;
 }
 
-img {
-    width: 50vw;
-    height: 50vw;
+.cube {
+    position: relative;
+    width: 18.75rem;
+    height: 18.75rem;
+    transform-style: preserve-3d;
+    /* transform: rotate3d(1, 1, 0, 45deg); */
+    animation: action 7s linear infinite;
+}
+
+@keyframes action {
+    from {transform: rotate3d(0, 0, 0);}
+    to {transform: rotate3d(1, 1, 0, 360deg);}
+}
+
+.cube-face {
+    width: 100%;
+    height: 100%;
+    
+    /* opacity: 0.5; */
+    position: absolute;
+}
+
+.front {
+    transform: translateZ(9.375rem);
+}
+
+.back {
+    transform: translateZ(-9.375rem) rotateY(180deg);
+}
+
+.left {
+    transform: translateX(-9.375rem) rotateY(-90deg);
+}
+
+.right {
+    transform: translateX(9.375rem) rotateY(90deg);
+}
+
+.top {
+    transform: translateY(-9.375rem) rotateX(-90deg);
+}
+
+.bottom {
+    transform: translateY(9.375rem) rotateX(90deg);
 }
