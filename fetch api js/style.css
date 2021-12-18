@@ -1,8 +1,5 @@
 body {
-    background: url('https://cdn.pixabay.com/photo/2011/12/15/11/15/messier-82-11177__340.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background: black;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
