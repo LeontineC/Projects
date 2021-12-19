@@ -6,8 +6,8 @@ body {
 }
 
 .wrapper {
-    width: 12.5rem;
-    height: 12.5rem;
+    width: 18.75rem;
+    height: 18.75rem;
     margin: 15rem auto;
     perspective: 37.5rem;
 }

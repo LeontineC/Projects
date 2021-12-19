@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch&family=Twinkle+Star&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+}
+
+body {
+    background: #000;
+    font-family: 'Twinkle Star', cursive;
+    font-size: .2rem;
+}
+
+.wrapper {
+    width: 10vw;
+    height: 10vw;
+    margin: 300px auto;
+    perspective: 40vw;
+}
+
+.cube {
+    width: 10vw;
+    height: 10vw;
+    position: relative;
+    color: white;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 0, 0, 0deg);
+    transition: 2s ease-in;
+}
+
+.cube.active-1 {
+    transform: rotate3d(1, 0, 0, 0deg);
+}
+.cube.active-2 {
+    transform: rotate3d(0, 1, 0, 180deg);
+}
+.cube.active-3 {
+    transform: rotate3d(0, 1, 0, 90deg);
+}
+.cube.active-4 {
+    transform: rotate3d(0, 1, 0, -90deg);
+}
+.cube.active-5 {
+    transform: rotate3d(1, 0, 0, -90deg);
+}
+.cube.active-6 {
+    transform: rotate3d(1, 0, 0, 90deg);
+}
+
+.cube-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 2vw;
+    border: #fff solid 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    
+}
+
+.front {
+    transform: translateZ(5vw);
+    background: url('https://cdn.pixabay.com/photo/2017/08/15/08/23/stars-2643089_960_720.jpg');
+}
+
+.back{
+    transform: translateZ(-5vw) rotateY(180deg);
+    background: url('https://cdn.pixabay.com/photo/2018/03/28/19/20/wood-3270232_960_720.jpg');
+}
+
+.left {
+    transform: translateX(-5vw) rotateY(-90deg);
+    background: url('https://cdn.pixabay.com/photo/2015/11/07/11/20/succulent-1031033_960_720.jpg');
+}
+
+.right {
+    transform: translateX(5vw) rotateY(90deg);
+    background: url('https://cdn.pixabay.com/photo/2021/01/12/15/36/leaves-5911768_960_720.jpg');
+}
+
+.top {
+    transform: translateY(-5vw) rotateX(90deg);
+    background:url('https://cdn.pixabay.com/photo/2020/04/19/08/17/watercolor-5062356_960_720.jpg');
+    
+}
+
+.bottom {
+    transform: translateY(5vw) rotateX(-90deg); 
+    background: url('https://cdn.pixabay.com/photo/2020/03/04/16/50/firs-4902127_960_720.jpg');
+}
+
+.button {
+    display: inline-block;
+    margin: 5vw 3vw;
+    padding: .5vw;
+    color: white;
+    background: transparent;
+    outline: none;
+    border: #fff solid 1px;
+    border-radius: 30px;
+    cursor: pointer;
+}
