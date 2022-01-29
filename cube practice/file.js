@@ -4,9 +4,6 @@ let currentClass = 'active-1';
 
 //generate random number between 1 and 6
 
-
-
-
 rollCube = () => {
     let randomNumber = Math.floor(Math.random() * 6) + 1;
     console.log(randomNumber);

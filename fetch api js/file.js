@@ -3,10 +3,11 @@ const cube = document.querySelector(".cube");
 const key = config.NASA_API_KEY;
 
 fetchImage = async () => {
-  // try { const response = await fetch(`https://api.nasa.gov/planetary/apod/?api_key=${key}`)
+ 
   try {
     const response = await fetch(
-      `https://api.nasa.gov/planetary/apod/?&count=6&api_key=${key}`
+      // `https://api.nasa.gov/planetary/apod/?&count=6&api_key=${key}`
+      `https://api.nasa.gov/planetary/apod/?end_date=2021-07-27&start_date=2021-07-21&api_key=${key}`
     );
     const data = await response.json();
     console.log(data);
