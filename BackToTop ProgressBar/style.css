@@ -17,7 +17,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin: 10vh 0;
+  padding: 10vh 0;
+}
+
+.progressBar {
+  height: 1rem;
+  background: linear-gradient(rgb(241, 241, 241), rgb(71, 71, 71));
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
 }
 
 h1 {
@@ -45,7 +54,7 @@ img {
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .arrow {
@@ -73,5 +82,3 @@ img {
 .arrow:hover + .explanation {
   transform: scale(1.5);
 }
-
-

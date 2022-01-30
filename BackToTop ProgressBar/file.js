@@ -1,6 +1,9 @@
 const sectionOne = document.querySelector(".sectionOne");
 const sectionArrow = document.querySelector(".sectionArrow");
 const arrow = document.querySelector(".arrow");
+const progressBar = document.querySelector(".progressBar");
+const container = document.body;
+const doc = document.documentElement;
 
 //hide and reveal backToTop section
 const navOptions = {
@@ -33,4 +36,17 @@ backToTop = () => {
   });
 };
 
+//fire off function on arrow click
+
 arrow.addEventListener("click", backToTop);
+
+//set width of scroll progress bar
+
+document.addEventListener("scroll", () => {
+  const calculatePercentage =
+    ((container.scrollTop || doc.scrollTop) /
+      ((container.scrollHeight || doc.scrollHeight) - doc.clientHeight)) *
+    100;
+
+  progressBar.style.width = `${calculatePercentage}%`;
+});
