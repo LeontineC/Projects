@@ -51,6 +51,7 @@ nav {
 
 .nav-list li {
   list-style: none;
+  
 }
 
 .nav-list li a {
@@ -108,7 +109,7 @@ nav {
   .nav-list.active {
     transform: translateX(0%);
   }
-}
+
 
 .nav-list li {
   opacity: 0;
@@ -135,4 +136,5 @@ nav {
     opacity: 1;
     transform: translateY(0px);
   }
+}
 }
