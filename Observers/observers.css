@@ -35,7 +35,7 @@ body {
 
 .rectangle {
   height: 300px;
-  border: solid 2px #000;
+  box-shadow: var(--box-shadow);
   background: var(--color-medium);
   flex-grow: 1;
   flex-shrink: 1;
