@@ -4,6 +4,8 @@ const text = document.querySelector(".text");
 const iParent = document.querySelector(".container-intersection");
 const lastWords = document.querySelector("h5");
 
+//resize observer
+
 changeShape = (entries) => {
   const sibling = resizeParent.lastElementChild;
   const change = entries[0].contentRect.width < 400;
@@ -14,17 +16,23 @@ const resizeObserver = new ResizeObserver(changeShape);
 
 resizeObserver.observe(resizeParent.firstElementChild);
 
+//mutation observer
+
 switchToDarkMode = (entries) => {
   if (MutationRecord) {
     text.style.color = "SaddleBrown";
     mutationParent.style.background = "tan";
     mutationParent.style.opacity = 0.8;
+  } else {
+      return;
   }
 };
 
 const mutateObserver = new MutationObserver(switchToDarkMode);
 
 mutateObserver.observe(text.childNodes[0], { characterData: true });
+
+//intersection observer
 
 appearOnPage = (entries) => {
   entries.forEach((entry) => {
@@ -43,4 +51,4 @@ iObserver.observe(iParent.lastElementChild, {
   threshold: 1,
   rootMargin: "0px",
 });
-console.log(iParent.lastElementChild);
+
