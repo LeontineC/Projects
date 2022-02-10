@@ -41,13 +41,16 @@ body {
   flex-shrink: 1;
   margin: 1vw;
   text-align: center;
-  padding: 8vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-mutation {
   min-height: 300px;
   max-width: 400px;
   margin: 20vw 0;
+  padding: 1vw;
   background: var(--color-light);
   box-shadow: var(--box-shadow);
   color: var(--color-dark);
