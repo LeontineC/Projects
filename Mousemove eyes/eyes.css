@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to top, rgb(155, 221, 128), rgb(124, 211, 90));
+    background: url('https://cdn.pixabay.com/photo/2017/02/15/20/33/floral-2069810_960_720.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="30" width="60"><text y="28" font-size="32">🛸</text><path d="M0,2 L0,0 L2,0" fill="dark-green" /></svg>'),
+    auto;
+}
+
+.head {
+     width: 500px;
+     height: 500px;
+     border-radius: 50%;
+     background: rgb(199, 62, 165);
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nose {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    background:rgb(80, 9, 62);
+    position: absolute;
+    top: 60%;
+    left: 48.5%;
+}
+
+.nose::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+}
+
+.eyeshape {
+    width: 100px;
+    height: 100px;
+    background-color: azure;
+    border-radius: 50%;
+    margin: 2vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.iris {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right,rgb(80, 48, 32), rgb(29, 17, 11));
+    border-radius: 50%;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+}
+
+.iris::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: black;
+    transform: translate(70%, 70%);
+}
