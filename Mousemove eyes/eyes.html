@@ -18,7 +18,7 @@
         <div class="eyeshape">
             <div class="iris">
         </div>
-       
+      
     </div>
 
         <script>
@@ -28,7 +28,6 @@
 
             handleMouseMove = (e) => {
               
-                // console.log(e.clientX);
                 let x = e.clientX * 50/ window.innerWidth;
                 let y = e.clientY * 50/ window.innerHeight;
                
@@ -36,12 +35,10 @@
                    
                   single.style.left = x + "%";
                   single.style.top = y + "%";
-               
-               
-            })
+               })
             };
 
             document.addEventListener('mousemove', handleMouseMove);
-        </script>
+</script>
 </body>
 </html>

@@ -52,6 +52,16 @@ body {
     left: 20%;
 }
 
+.nose:hover ~ div .iris {
+    width: 70px;
+    height: 70px;
+}
+
+.nose:hover ~ div .iris::before {
+    width: 40px;
+    height: 40px;
+}
+
 .eyeshape {
     width: 100px;
     height: 100px;
@@ -60,6 +70,7 @@ body {
     margin: 2vw;
     position: relative;
     overflow: hidden;
+    animation: blink 5s ease-in-out infinite;
 }
 
 .iris {
@@ -70,6 +81,8 @@ body {
     position: absolute;
     left: 25%;
     top: 25%;
+    animation: blink 5s ease-in-out infinite;
+    transition: width height .5s ease-in;
 }
 
 .iris::before {
@@ -79,5 +92,18 @@ body {
     height: 20px;
     border-radius: 50%;
     background: black;
-    transform: translate(70%, 70%);
+    top: 1rem;
+    left: 1rem;
+    animation: blink 5s ease-in-out infinite;
+    transition: width height .5s ease-in;
+}
+
+@keyframes blink {
+    0%, 100% {
+        transform:scaleY(.05);
+    }
+    5%,
+    95% {
+        transform:scaleY(1);
+    }
 }
