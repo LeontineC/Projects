@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,38 @@
     <title>Mousemove eyes</title>
     <link rel="stylesheet" href="eyes.css" />
 </head>
+
 <body>
-        <div class="head">
-           
-            <div class="nose"></div>
+    <div class="head">
+
+        <div class="nose"></div>
         <div class="eyeshape">
             <div class="iris">
-        </div>
+            </div>
         </div>
         <div class="eyeshape">
             <div class="iris">
-        </div>
-      
+            </div>
+
     </div>
 
         <script>
             const iris = document.querySelectorAll('.iris');
-            
-            // console.log(window.innerWidth);
 
             handleMouseMove = (e) => {
-              
-                let x = e.clientX * 50/ window.innerWidth;
-                let y = e.clientY * 50/ window.innerHeight;
-               
+
+                let x = e.clientX * 50 / window.innerWidth;
+                let y = e.clientY * 50 / window.innerHeight;
+
                 iris.forEach(single => {
-                   
-                  single.style.left = x + "%";
-                  single.style.top = y + "%";
-               })
+
+                    single.style.left = x + "%";
+                    single.style.top = y + "%";
+                })
             };
 
             document.addEventListener('mousemove', handleMouseMove);
-</script>
+        </script>
 </body>
+
 </html>
