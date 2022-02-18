@@ -9,7 +9,6 @@
 body {
   background: #000;
   font-family: "Twinkle Star", cursive;
-  /* font-size: 1.75rem; */
   width: 100vw;
   min-height: 100vh;
   display: grid;
@@ -23,7 +22,6 @@ body {
   perspective: 40rem;
   display: grid;
   align-content: center;
-  border: pink solid 1px;
 }
 
 .cube {
