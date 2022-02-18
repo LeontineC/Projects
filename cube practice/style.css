@@ -1,109 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Smooch&family=Twinkle+Star&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Smooch&family=Twinkle+Star&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-   
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #000;
-    font-family: 'Twinkle Star', cursive;
-    font-size: .2rem;
+  background: #000;
+  font-family: "Twinkle Star", cursive;
+  /* font-size: 1.75rem; */
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
 }
 
 .wrapper {
-    width: 15vw;
-    height: 15vw;
-    margin: 15vw auto;
-    perspective: 40vw;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  perspective: 40rem;
+  display: grid;
+  align-content: center;
+  border: pink solid 1px;
 }
 
 .cube {
-    width: 15vw;
-    height: 15vw;
-    position: relative;
-    color: white;
-    transform-style: preserve-3d;
-    transform: rotate3d(1, 0, 0, 0deg);
-    transition: 2s ease-in;
+  width: 15rem;
+  height: 15rem;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  transform-style: preserve-3d;
+  transform: rotate3d(1, 0, 0, 0deg);
+  transition: 2s ease-in;
 }
 
 .cube.active-1 {
-    transform: rotate3d(1, 0, 0, 0deg);
+  transform: rotate3d(1, 0, 0, 0deg);
 }
 .cube.active-2 {
-    transform: rotate3d(0, 1, 0, 180deg);
+  transform: rotate3d(0, 1, 0, 180deg);
 }
 .cube.active-3 {
-    transform: rotate3d(0, 1, 0, 90deg);
+  transform: rotate3d(0, 1, 0, 90deg);
 }
 .cube.active-4 {
-    transform: rotate3d(0, 1, 0, -90deg);
+  transform: rotate3d(0, 1, 0, -90deg);
 }
 .cube.active-5 {
-    transform: rotate3d(1, 0, 0, -90deg);
+  transform: rotate3d(1, 0, 0, -90deg);
 }
 .cube.active-6 {
-    transform: rotate3d(1, 0, 0, 90deg);
+  transform: rotate3d(1, 0, 0, 90deg);
 }
 
 .cube-face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    text-align: center;
-    font-size: 2vw;
-    border: #fff solid 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.9;
-    
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 1.75rem;
+  border: #fff solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
 }
 
 .front {
-    transform: translateZ(7.5vw);
-    background: url('https://cdn.pixabay.com/photo/2017/08/15/08/23/stars-2643089_960_720.jpg');
+  transform: translateZ(7.5rem);
+  background: url("https://cdn.pixabay.com/photo/2017/08/15/08/23/stars-2643089_960_720.jpg");
 }
 
-.back{
-    transform: translateZ(-7.5vw) rotateY(180deg);
-    background: url('https://cdn.pixabay.com/photo/2018/03/28/19/20/wood-3270232_960_720.jpg');
+.back {
+  transform: translateZ(-7.5rem) rotateY(180deg);
+  background: url("https://cdn.pixabay.com/photo/2018/03/28/19/20/wood-3270232_960_720.jpg");
 }
 
 .left {
-    transform: translateX(-7.5vw) rotateY(-90deg);
-    background: url('https://cdn.pixabay.com/photo/2015/11/07/11/20/succulent-1031033_960_720.jpg');
+  transform: translateX(-7.5rem) rotateY(-90deg);
+  background: url("https://cdn.pixabay.com/photo/2015/11/07/11/20/succulent-1031033_960_720.jpg");
 }
 
 .right {
-    transform: translateX(7.5vw) rotateY(90deg);
-    background: url('https://cdn.pixabay.com/photo/2021/01/12/15/36/leaves-5911768_960_720.jpg');
+  transform: translateX(7.5rem) rotateY(90deg);
+  background: url("https://cdn.pixabay.com/photo/2021/01/12/15/36/leaves-5911768_960_720.jpg");
 }
 
 .top {
-    transform: translateY(-7.5vw) rotateX(90deg);
-    background:url('https://cdn.pixabay.com/photo/2020/04/19/08/17/watercolor-5062356_960_720.jpg');
-    
+  transform: translateY(-7.5rem) rotateX(90deg);
+  background: url("https://cdn.pixabay.com/photo/2020/04/19/08/17/watercolor-5062356_960_720.jpg");
 }
 
 .bottom {
-    transform: translateY(7.5vw) rotateX(-90deg); 
-    background: url('https://cdn.pixabay.com/photo/2020/03/04/16/50/firs-4902127_960_720.jpg');
+  transform: translateY(7.5rem) rotateX(-90deg);
+  background: url("https://cdn.pixabay.com/photo/2020/03/04/16/50/firs-4902127_960_720.jpg");
 }
 
 .button {
-    display: inline-block;
-    margin: 5vw 5vw;
-    padding: .5vw;
-    color: white;
-    background: transparent;
-    outline: none;
-    border: #fff solid 1px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-family: inherit;
-    cursor: pointer;
+  display: inline-block;
+  margin: 3em auto 0 auto;
+  width: 10rem;
+  padding: 1em;
+  color: white;
+  background: transparent;
+  outline: none;
+  border: #fff solid 1px;
+  border-radius: 30px;
+  font-size: 1.25rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .cube {
+    width: 12rem;
+    height: 12rem;
+  }
+  .front {
+    transform: translateZ(6rem);
+  }
+  .back {
+    transform: translateZ(-6rem) rotateY(180deg);
+  }
+  .left {
+    transform: translateX(-6rem) rotateY(-90deg);
+  }
+  .right {
+    transform: translateX(6rem) rotateY(90deg);
+  }
+  .top {
+    transform: translateY(-6rem) rotateX(90deg);
+  }
+  .bottom {
+    transform: translateY(6rem) rotateX(-90deg);
+  }
 }
