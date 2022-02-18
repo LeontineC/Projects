@@ -15,8 +15,8 @@ gsap.to(".star", {
 gsap.to(".fallingstar", {
   duration: 2,
   ease: "sine",
-  y: 800,
-  x: -800,
+  y: 1200,
+  x: -1200,
   stagger: {
     each: 1,
     repeat: -1,
