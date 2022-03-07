@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-img: url("bg.jpg");
+  --clr-bg: rgb(199, 213, 226);
+  --clr-op: rgb(199, 213, 226, 0.5);
+  --clr-dark: rgb(10, 10, 53);
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: var(--clr-bg);
+  font-family: "BhuTuka Expanded One", cursive;
+  font-weight: 600;
+  color: var(--clr-dark);
+}
+
+.wrapper {
+  width: 400vw;
+  height: 100vh;
+  display: flex;
+}
+
+.pieces {
+  display: flex;
+  transition: 1s linear;
+  position: relative;
+}
+
+.pieces > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 0 1em;
+}
+
+.pieces h2,
+p {
+  background: var(--clr-op);
+  padding: 1em 2em;
+  border-radius: 16px;
+  margin-bottom: 4em;
+  padding: 0 1em;
+}
+
+.piece-1 {
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg-img) 0 -40vh;
+}
+
+.piece-2 {
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg-img) -100vw -40vh;
+}
+
+.piece-3 {
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg-img) -200vw -40vh;
+}
+
+.piece-4 {
+  height: 100vh;
+  width: 50vw;
+  background: var(--bg-img) -300vw -40vh;
+}
+
+.button {
+  border: none;
+  outline: none;
+  position: fixed;
+  top: 60%;
+  background-color: transparent;
+  z-index: 7;
+  transition: 1.5s ease-in-out;
+}
+
+.button-left {
+  left: 20%;
+}
+
+.button-right {
+  right: 20%;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.icon {
+  stroke: var(--clr-dark);
+  fill: none;
+  stroke-width: 0.5;
+  width: 5rem;
+  height: 4rem;
+}
+
+footer {
+  max-height: 5vh;
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 768px) {
+  .piece h2,
+  p {
+    font-size: 1rem;
+  }
+}
