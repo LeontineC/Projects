@@ -103,7 +103,7 @@ p {
 }
 
 .hide {
-    opacity: 0;
+  opacity: 0;
 }
 
 .icon {
@@ -129,5 +129,29 @@ footer {
   .piece h2,
   p {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .button {
+    top: 65%;
+  }
+  .piece-1 {
+    width: 100vw;
+    background: var(--bg-img) 0 -40vh;
+  }
+
+  .piece-2 {
+    width: 100vw;
+    background: var(--bg-img) -500vw -40vh;
+  }
+
+  .piece-3 {
+    width: 100vw;
+    background: var(--bg-img) -700vw -40vh;
+  }
+
+  .piece-4 {
+    width: 50vw;
+    background: var(--bg-img) -900vw -40vh;
   }
 }

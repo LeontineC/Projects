@@ -17,6 +17,10 @@ allPieces.forEach((slide, index) => {
   slide.style.left = piecesLeft * index + "vw";
 });
 
+// allPieces.forEach((slide, index) => {
+  // slide.style.left = piecesLeft * index + "px";
+// });
+
 handleSlides = (currentPiece, targetPiece) => {
   pieces.style.transform = "translateX(-" + targetPiece.style.left + ")";
 
@@ -57,3 +61,4 @@ buttonL.addEventListener("click", (e) => {
   handleSlides(currentPiece, previousPiece);
   handleLeftRightBtns(buttonR, buttonL, previousIndex);
 });
+
