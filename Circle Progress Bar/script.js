@@ -13,8 +13,6 @@ handleToggle = () => {
   } else {
     video.pause();
   }
-  // const method = video.paused ? 'play' : 'pause';
-  // video[method]();
 };
 
 handleButtonIcon = () => {
@@ -29,7 +27,6 @@ handleButtonIcon = () => {
 
 handleProgress = () => {
   const percent = (video.currentTime / video.duration) * 100;
-  // `${percent}%`
   const canvas = document.querySelector(".circle");
   const context = canvas.getContext("2d");
   const centerX = canvas.width / 2;
@@ -37,17 +34,24 @@ handleProgress = () => {
   const radius = 50;
 
   context.beginPath();
-  // context.moveTo(centerX, centerY);
   context.arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
   context.closePath();
 
-  // context.fillStyle = 'pink';
-  // context.fill();
+  context.lineWidth = 2;
   context.strokeStyle = "white";
   context.stroke();
 
   const startAngle = 1.5 * Math.PI;
-  const radial = (Math.PI * 2) / 100;
+  let unitValue = (Math.PI - 0.5 * Math.PI) / 25;
+
+  endAngle = startAngle + percent * unitValue;
+
+  context.beginPath();
+  context.moveTo(centerX, centerY);
+  context.arc(centerX, centerY, radius, startAngle, endAngle, false);
+  context.closePath();
+  context.fillStyle = "rgb(255,192,203,.1)";
+  context.fill();
 };
 
 video.addEventListener("click", handleToggle);
