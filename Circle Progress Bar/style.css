@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom,rgb(202, 224, 149), rgb(179, 204, 37));
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.video {
+    border: white solid 5px;
+    border-radius: 2%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 60%;
+    height: 100%;
+    position: relative;
+}
+
+.toggle-button {
+      background: none;
+      border: none;
+      outline: 0;
+      color: white;
+      text-align: center;
+    }
+
+.play {
+    opacity: 1;
+    position: absolute;
+}
+
+.pause {
+    opacity: 0;
+    position: absolute;
+}
+
+.circle {
+    position: absolute;
+    top: 55%;
+    left: 65%;
+}
