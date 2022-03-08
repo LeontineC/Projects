@@ -10,18 +10,21 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .wrapper {
-    width: 100%;
+    width: 60%;
+    height: 100%;
     text-align: center;
+    position: relative;
 }
 
 .video {
     border: white solid 5px;
     border-radius: 2%;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    width: 60%;
+    width: 100%;
     height: 100%;
     position: relative;
 }
@@ -37,15 +40,45 @@ body {
 .play {
     opacity: 1;
     position: absolute;
+    width: 3rem;
+    height: 3rem;
 }
 
 .pause {
     opacity: 0;
     position: absolute;
+    width: 3rem;
+    height: 3rem;
 }
 
 .circle {
     position: absolute;
-    top: 55%;
-    left: 65%;
+    top: 80%;
+    left: 90%;
+    opacity: 0.7;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        width: 90%;
+    }
+    .video {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
+    .video {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .circle {
+        top: 72%;
+    }
 }

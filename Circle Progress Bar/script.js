@@ -31,13 +31,13 @@ handleProgress = () => {
   const context = canvas.getContext("2d");
   const centerX = canvas.width / 2;
   const centerY = canvas.height / 2;
-  const radius = 50;
+  const radius = 20;
 
   context.beginPath();
   context.arc(centerX, centerY, radius, 0, 2 * Math.PI, true);
   context.closePath();
 
-  context.lineWidth = 2;
+  context.lineWidth = 3;
   context.strokeStyle = "white";
   context.stroke();
 
@@ -50,7 +50,7 @@ handleProgress = () => {
   context.moveTo(centerX, centerY);
   context.arc(centerX, centerY, radius, startAngle, endAngle, false);
   context.closePath();
-  context.fillStyle = "rgb(255,192,203,.1)";
+  context.fillStyle = "rgb(255,192,203)";
   context.fill();
 };
 
