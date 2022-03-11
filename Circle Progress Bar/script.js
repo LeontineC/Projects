@@ -42,8 +42,8 @@ handleProgress = () => {
   context.stroke();
 
   const startAngle = 1.5 * Math.PI;
-  let unitValue = (Math.PI - 0.5 * Math.PI) / 25;
-
+  const unitValue = (Math.PI - 0.5 * Math.PI) / 25; //math.pi - 0.5 * math.pi is a quarter of a circle
+  //divided by 25 makes 100 values in total for whole circle
   endAngle = startAngle + percent * unitValue;
 
   context.beginPath();
