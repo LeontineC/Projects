@@ -1,0 +1,11 @@
+Model Information:
+* title:	house
+* source:	https://sketchfab.com/3d-models/house-1051d962d4a84335b2a787ee2b16e9af
+* author:	Igor Tretyakov (https://sketchfab.com/vdv77)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "house" (https://sketchfab.com/3d-models/house-1051d962d4a84335b2a787ee2b16e9af) by Igor Tretyakov (https://sketchfab.com/vdv77) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
