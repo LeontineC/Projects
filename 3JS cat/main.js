@@ -7,19 +7,25 @@
 //access animations of bird model
 //shadows
 
-let renderer, scene, camera, controls, canvas = document.querySelector(".canvas");
+let renderer,
+  scene,
+  camera,
+  controls,
+  canvas = document.querySelector(".canvas");
 
-init = () => {
-
+//SCENE
 scene = new THREE.Scene();
 
+//CAMERA
 camera = new THREE.PerspectiveCamera(
   60,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
 );
+camera.position.z = 35;
 
+//RENDERER
 renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   antialias: true,
@@ -27,62 +33,90 @@ renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-const background = new THREE.TextureLoader().load('textures/clouds.jpg');
-const texture = new THREE.TextureLoader().load('textures/tiles.jpg');
+//TEXTURES
 
-scene.background = background;
+// const background = new THREE.TextureLoader().load("textures/clouds.jpg");
+const texture = new THREE.TextureLoader().load("textures/tiles.jpg");
 
-/*const geometryPlane = new THREE.PlaneGeometry(100, 20, 1, 1);
-const materialPlane = new THREE.MeshBasicMaterial({map: texture});
+// scene.background = background;
+
+//GEOMETRY
+
+const geometryPlane = new THREE.PlaneGeometry(100, 30, 1, 1);
+const materialPlane = new THREE.MeshBasicMaterial({ map: texture });
 const plane = new THREE.Mesh(geometryPlane, materialPlane);
-plane.position.y = -20;
-
+plane.position.set(0, -20, -3);
+plane.receiveShadow = true;
 scene.add(plane);
-*/
 
-// plane.position.set(0,0,-3);
-camera.position.z = 35;
-
-
+//LIGHT
 
 const light = new THREE.AmbientLight(0xffffff, 2);
 scene.add(light);
 
-let loader = new THREE.GLTFLoader();
-loader.load('./animated_cat/scene.gltf', function(gltf) {
-  scene.add(gltf.scene);
-  cat = gltf.scene.children[0];
-  cat.position.y = -15;
-  // const animations = gltf.animations;
-  // movement = new THREE.AnimationMixer(cat);
-  // console.log(movement)
-  // const action = movement.clipAction( animations[0] ); 
-  // console.log(action)
-    // action.play();
-});
+const lightTwo = new THREE.DirectionalLight(0xdcdcdc, 5);
+lightTwo.position.set = (500, 1, 500);
+lightTwo.castShadow = true;
+scene.add(lightTwo);
+
+//LOADER
+let cat, bird, catMixer, birdMixer;
+
+handleCat = (gltf) => {
+  cat = gltf.scene;
+  scene.add(cat);
+  cat.position.y = -12;
+  cat.rotation.y = 200;
+}
+
+const catLoader = new THREE.GLTFLoader();
+catLoader.load("./animated_cat/scene.gltf", handleCat);
+ 
+
+handleRobin = (gltf, birdMixer) => {
+  bird = gltf.scene;
+  bird.scale.multiplyScalar(1 / 70);
+  bird.position.x = -20;
+  bird.position.y = -7;
+  bird.rotation.y = 180;
+  scene.add(bird);
+  birdMixer = new THREE.AnimationMixer(bird);
+  console.log(birdMixer);
+  const birdClips = gltf.animations;
+  const birdClip = THREE.AnimationClip.findByName(birdClips, 'LookAround');
+  const birdAction = birdMixer.clipAction(birdClip);
+  birdAction.play();
+};
+
+const robinLoader = new THREE.GLTFLoader();
+robinLoader.load("./redcoat_robin/scene.gltf", handleRobin);
+
+
+
+
+//ORBITCONTROLS
 
 controls = new THREE.OrbitControls(camera, canvas);
 controls.minDistance = 1;
 controls.maxDistance = 900;
 
-    animate();
+// ANIMATE
+
+  animate = () => {
+  requestAnimationFrame(animate);
+  controls.update();
+  // birdMixer.update();    ///////////
+  renderer.render(scene, camera);
 };
 
-const animate = () => {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-};
+animate();
 
-
-init();
-
-  
+//RESPONSIVENESS
 
 handleResize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  };
-  
-  window.addEventListener('resize', handleResize);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+};
+
+window.addEventListener("resize", handleResize);
