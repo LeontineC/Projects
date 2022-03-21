@@ -35,14 +35,14 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 //TEXTURES
 
-// const background = new THREE.TextureLoader().load("textures/clouds.jpg");
+// const background = new THREE.TextureLoader().load("textures/bg.jpg");
 const texture = new THREE.TextureLoader().load("textures/tiles.jpg");
 
 // scene.background = background;
 
 //GEOMETRY
 
-const geometryPlane = new THREE.PlaneGeometry(100, 30, 1, 1);
+const geometryPlane = new THREE.PlaneGeometry(120, 16, 1, 1);
 const materialPlane = new THREE.MeshBasicMaterial({ map: texture });
 const plane = new THREE.Mesh(geometryPlane, materialPlane);
 plane.position.set(0, -20, -3);
@@ -66,22 +66,27 @@ handleCat = (gltf) => {
   cat = gltf.scene;
   scene.add(cat);
   cat.position.y = -12;
-  cat.rotation.y = 200;
-}
+  cat.rotation.y = -100;
+  catMixer = new THREE.AnimationMixer(cat);
+  const catClips = gltf.animations;
+  const catClip = THREE.AnimationClip.findByName(catClips, 'Take 001');
+  const catAction = catMixer.clipAction(catClip);
+  console.log(catClip);
+  catAction.play();
+};
 
 const catLoader = new THREE.GLTFLoader();
 catLoader.load("./animated_cat/scene.gltf", handleCat);
  
 
-handleRobin = (gltf, birdMixer) => {
+handleRobin = (gltf) => {
   bird = gltf.scene;
-  bird.scale.multiplyScalar(1 / 70);
+  bird.scale.multiplyScalar(1 / 90);
   bird.position.x = -20;
-  bird.position.y = -7;
+  bird.position.y = -10;
   bird.rotation.y = 180;
   scene.add(bird);
   birdMixer = new THREE.AnimationMixer(bird);
-  console.log(birdMixer);
   const birdClips = gltf.animations;
   const birdClip = THREE.AnimationClip.findByName(birdClips, 'LookAround');
   const birdAction = birdMixer.clipAction(birdClip);
@@ -91,21 +96,22 @@ handleRobin = (gltf, birdMixer) => {
 const robinLoader = new THREE.GLTFLoader();
 robinLoader.load("./redcoat_robin/scene.gltf", handleRobin);
 
-
-
+const clock = new THREE.Clock();
+const birdClock = new THREE.Clock();
 
 //ORBITCONTROLS
 
-controls = new THREE.OrbitControls(camera, canvas);
-controls.minDistance = 1;
-controls.maxDistance = 900;
+// controls = new THREE.OrbitControls(camera, canvas);
+// controls.minDistance = 1;
+// controls.maxDistance = 900;
 
 // ANIMATE
 
   animate = () => {
   requestAnimationFrame(animate);
-  controls.update();
-  // birdMixer.update();    ///////////
+  // controls.update();
+  birdMixer.update(birdClock.getDelta());
+  catMixer.update(clock.getDelta());
   renderer.render(scene, camera);
 };
 
