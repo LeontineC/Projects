@@ -41,55 +41,83 @@ renderer.shadowMap.enabled = true;
 
 //TEXTURES
 
-// const background = new THREE.TextureLoader().load("textures/bg.jpg");
+handleTexture = (texture) => {
+  texture.repeat.set(4, 1);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.needsUpdate = true;
+};
+
 const texture = new THREE.TextureLoader();
-const baseColor = texture.load("floor/Wood_Floor_011_basecolor.jpg");
-const floorNormalMap = texture.load("floor/Wood_Floor_011_normal.jpg");
-const heightMap = texture.load("floor/Wood_Floor_011_height.png");
-const ambientOcclusionMap = texture.load(
-  "floor/Wood_Floor_011_ambientOcclusion.jpg"
+
+const baseColor = texture.load(
+  "floor/Wood_Herringbone_Tiles_003_basecolor.jpg",
+  handleTexture
 );
-const floorRoughnessMap = texture.load("floor/Wood_Floor_011_roughness.jpg");
+const floorNormalMap = texture.load(
+  "floor/Wood_Herringbone_Tiles_003_normal.jpg",
+  handleTexture
+);
+const heightMap = texture.load(
+  "floor/Wood_Herringbone_Tiles_003_height.png",
+  handleTexture
+);
+const ambientOcclusionMap = texture.load(
+  "floor/Wood_Herringbone_Tiles_003_ambientOcclusion.jpg",
+  handleTexture
+);
+const floorRoughnessMap = texture.load(
+  "floor/Wood_Herringbone_Tiles_003_roughness.jpg",
+  handleTexture
+);
 
 // scene.background = new THREE.Color(0x010000);
 
-//GEOMETRY
+//GEOMETRY FLOOR
 
-const geometryPlane = new THREE.PlaneGeometry(150, 55, 512, 512);
+const geometryPlane = new THREE.PlaneGeometry(150, 50, 512, 512);
 const materialPlane = new THREE.MeshStandardMaterial({
   map: baseColor,
   normalMap: floorNormalMap,
   displacementMap: heightMap,
-  displacementScale: 0.02,
+  displacementScale: 0.5,
   roughnessMap: floorRoughnessMap,
-  roughness: 0.02,
+  roughness: 5,
   aoMap: ambientOcclusionMap,
 });
-
 console.log(materialPlane);
 const plane = new THREE.Mesh(geometryPlane, materialPlane);
 plane.rotation.x = -45;
 plane.position.y = -25;
 plane.geometry.attributes.uv2 = plane.geometry.attributes.uv;
 plane.receiveShadow = true;
+
 scene.add(plane);
+
+//GEOMETRY WALL
+const geometryPlaneTwo = new THREE.PlaneGeometry(150, 100, 1, 1);
+const materialPlaneTwo = new THREE.MeshStandardMaterial({ color: 0x800000 });
+const planeTwo = new THREE.Mesh(geometryPlaneTwo, materialPlaneTwo);
+planeTwo.receiveShadow = true;
+scene.add(planeTwo);
+planeTwo.position.z = -20;
 
 //LIGHT
 
 const light = new THREE.AmbientLight(0xdcdcdc, 1.5);
 scene.add(light);
 
-const lightTwo = new THREE.DirectionalLight(0xdcdcdc, 0.5);
-lightTwo.position.y = 10;
+const lightTwo = new THREE.DirectionalLight(0xdcdcdc, 0.2);
+lightTwo.position.y = 5;
 lightTwo.position.x = 20;
-lightTwo.position.z = 20;
+lightTwo.position.z = 40;
 lightTwo.castShadow = true;
 scene.add(lightTwo);
 
-lightTwo.shadow.camera.top = 20;
-lightTwo.shadow.camera.bottom = -20;
-lightTwo.shadow.camera.left = -20;
-lightTwo.shadow.camera.right = 20;
+lightTwo.shadow.camera.top = 30;
+lightTwo.shadow.camera.bottom = -30;
+lightTwo.shadow.camera.left = -30;
+lightTwo.shadow.camera.right = 30;
 
 // scene.add( new THREE.CameraHelper(lightTwo.shadow.camera));
 //LOADER
@@ -101,8 +129,8 @@ handleCat = (gltf) => {
   cat.rotation.y = -100;
   scene.add(cat);
   cat.traverse((cats) => {
-  cats.castShadow = true;
-  cats.receiveShadow = true;
+    cats.castShadow = true;
+    cats.receiveShadow = true;
   });
   catMixer = new THREE.AnimationMixer(cat);
   const catClips = gltf.animations;
@@ -118,7 +146,7 @@ catLoader.load("./animated_cat/scene.gltf", handleCat);
 handleRobin = (gltf) => {
   bird = gltf.scene;
   bird.scale.multiplyScalar(1 / 90);
-  bird.position.x = -20;
+  bird.position.x = -15;
   bird.position.y = -10;
   bird.rotation.y = 180;
   scene.add(bird);
