@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+3D&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rock 3D", cursive;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(white, rgb(197, 197, 179));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.scene {
+  width: 20rem;
+  height: 25rem;
+  perspective: 600px;
+  margin: 2em;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: relative;
+  border: solid black 3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  font-size: 2rem;
+  transition: transform 2s ease-in;
+  transform-style: preserve-3d;
+}
+
+.card-sides {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: flex-end;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: rotateY(-180deg);
+}
+
+.card-one .front {
+  background: url("assets/winter.jpg");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.card-one .back {
+  background: url("assets/summer.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg) ;
+}
+
+.card-two .front {
+  background: url("assets/spring.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-two .back {
+  background: url("assets/fall.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.card-sides h2 {
+    transform: translateZ(50px);
+    margin-bottom: 0.5em;
+}
