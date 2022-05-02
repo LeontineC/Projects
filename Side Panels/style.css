@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.panels-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+}
+
+.button {
+    color:rgb(39, 92, 39);
+    background: transparent;
+    margin: 5rem;
+    border-radius: 50%;
+    border: solid rgb(39, 92, 39);
+    padding: 1em;
+    font-family: inherit;
+    font-size: 2rem;
+}
+
+.panel-main {
+    background: rgb(160, 224, 160);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.panel {
+    width: calc(20% / 3);
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.panel h2 {
+    transform: rotate(90deg);
+    transition: 1s linear 1s;
+    margin-top: 3rem;
+    
+}
+
+.panel h2.horizontal {
+    transform: rotate(360deg) ;
+    /* scaleX(.15); */
+    transform-origin:0;
+    font-size: 15px;
+    
+}
+
+.panel-one {
+    background: rgb(245, 207, 213);
+    position: relative;
+    z-index: 5;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in;
+    /* animation: descend 1s forwards; */
+}
+
+.panel-two {
+    background: rgb(194, 255, 253);
+    position: relative;
+    z-index: 10;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in 1s;
+    /* animation: descend 1s forwards 1s; */
+}
+
+.panel-three {
+    background: rgb(249, 255, 194);
+    position: relative;
+    z-index: 15;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in 1.5s;
+    /* animation: descend 1s forwards 1.5s; */
+}
+
+.widen {
+   width: 90vw;
+
+}
+
+.descend {
+    transform: translateY(0%);
+}
+
+/*@keyframes descend {
+    100% {
+        background: white;
+    }
+}
+*/
+/*keyframes forwards descend so that delay not affect widen*/
